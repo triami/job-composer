@@ -1,0 +1,75 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.0.RELEASE")
+    }
+}
+
+plugins {
+    id "at.comm_unity.gradle.plugins.jpamodelgen" version "1.1.1"
+}
+
+group 'com.jpmc.fas'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'scala'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+
+
+
+jar {
+    baseName = 'gs-accessing-data-jpa'
+    version =  '0.1.0'
+}
+
+repositories {
+    mavenCentral()
+    maven { url "https://repository.jboss.org/nexus/content/repositories/releases" }
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+
+dependencies {
+    compile('org.scala-lang:scala-library:2.11.6')
+    compile group: 'org.scala-lang', name: 'scala-parser-combinators', version: '2.11.0-M4'
+
+    compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    compile("org.springframework.boot:spring-boot-starter-test")
+
+    compile("com.h2database:h2")
+
+    compile group: 'org.eclipse.persistence', name: 'javax.persistence', version: '2.1.1'
+    compile group: 'org.scalatest', name: 'scalatest_2.11', version: '2.2.6'
+
+    testCompile("junit:junit")
+
+}
+
+/*jpaModelgen {
+    library = "org.hibernate:hibernate-jpamodelgen:4.3.8.Final"
+    jpaModelgenSourcesDir = "src/main/java"
+}
+compileJava.options.compilerArgs += ["-proc:none"]*/
+
+/*idea {
+     module {
+         sourceDirs += file('src/jpaModelgen/java/')
+         iml{
+             beforeMerged { module ->
+                 module.dependencies.clear()
+             }
+         }
+     }
+}*/
+
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.3'
+}
