@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fas-job-composer.iml" filepath="$PROJECT_DIR$/.idea/modules/fas-job-composer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fas-job-composer_jpaModelgen.iml" filepath="$PROJECT_DIR$/.idea/modules/fas-job-composer_jpaModelgen.iml" group="fas-job-composer" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fas-job-composer_main.iml" filepath="$PROJECT_DIR$/.idea/modules/fas-job-composer_main.iml" group="fas-job-composer" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fas-job-composer_test.iml" filepath="$PROJECT_DIR$/.idea/modules/fas-job-composer_test.iml" group="fas-job-composer" />
+    </modules>
+  </component>
+</project>
