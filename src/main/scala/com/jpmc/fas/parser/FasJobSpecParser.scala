@@ -52,7 +52,7 @@ class FasJobSpecParser extends JavaTokenParsers {
 
 
 
-  def jobSpecExpr = selectionExpr ~ opt("where" ~> &(filterExpr))
+  def jobSpecExpr = selectionExpr ~ opt("where" ~> (filterExpr))
 }
 
 object FasJobSpecParser extends FasJobSpecParser {
